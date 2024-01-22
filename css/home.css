@@ -1,0 +1,525 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
+
+/* root */
+:root{
+    --sans: 'Open Sans', sans-serif;
+    --wideLatin: "Wide Latin";
+    --castoro: 'Castoro Titling', cursive;
+}
+
+/* reset */
+*,html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    overflow: hidden;
+}
+   
+
+/*For Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px silver; 
+	border-radius: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #00ADB5; 
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #222831; 
+}
+
+
+.main{
+    /* for pre loader */
+    opacity: 0;
+    transition: 2s linear;
+    overflow: hidden;
+}
+
+/* contact */
+.main #contact{
+    position: fixed;
+    z-index: 10000;
+    bottom: 1rem;
+    right: 2%;
+    font-size: 2.5rem;
+    color: #00ADB5;
+    background: #EEEEEE;
+    padding: .7rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.main #contact::after{
+    content: "Contact";
+    padding: .4rem;
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    font-size: .9rem;
+    color: #fff;
+    transition: 1.3s linear;
+    opacity: 0;
+}
+.main #contact:hover::after{
+    opacity: 1;
+}
+
+/* up */
+.main .up{
+    position: fixed;
+    z-index: -1;
+    bottom: 6rem;
+    right: 2.8%;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: #00ADB5;
+    transform: rotate(91deg);
+    -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 42% 100%, 0% 50%, 42% 0);
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 42% 100%, 0% 50%, 42% 0);
+    cursor: pointer;
+}
+
+
+/* contact form */
+.main .contactForm{
+    position: fixed;
+    top: 0%;
+    left: 200%;
+    z-index: 100000000000000000000;
+    background: #222831a6;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    transition: .7s linear;
+    opacity: 0;
+    padding: 3rem .3rem;
+}
+
+.main .contactForm #closeContactForm{
+    position: absolute;
+    top: 1.5%;
+    right: 3%;
+    color: #EEEEEE;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+
+.main .contactForm >h1{
+    color: #EEEEEE;
+    font-family: var(--castoro);
+    text-align: center;
+    word-break: break-word;
+}
+.main .contactForm >div >input{
+    padding: .5rem;
+    font-size: 1.3rem;
+    outline: none;
+    border-radius: .7rem;
+    width: 100vw;
+    max-width: 550px;
+    transition: .2s;
+    border: 3px solid #222831;
+}
+.main .contactForm >div >input:focus,
+.main .contactForm >div >textarea:focus{
+   border: 3px solid #00ADB5;
+}
+.main .contactForm >div >textarea{
+    height: 100%;
+    width: 100vw;
+    max-width: 550px;
+    font-size: 1.3rem;
+    border-radius: .7rem;
+    outline: none;
+    transition: .2s;
+    padding: .3rem;
+    border: 3px solid #222831;
+}
+.main .contactForm >#button{
+    text-align: center;
+    padding: .8rem 0;
+    width: 100vw;
+    max-width: 10rem;
+    font-size: 1.3rem;
+    font-family: var(--sans);
+    cursor: pointer;
+    border-radius: .6rem;
+    background: none;
+    outline: none;
+    border: 2px solid #00ADB5;
+    color: #ffff;
+    transition: .5s linear;
+}
+.main .contactForm >#button:hover{
+    background: #00ADB5;
+}
+
+.main .contactForm #chk{
+    position: absolute;
+    left: -500%;
+}
+
+
+
+
+
+
+/* social links */
+.main .socialLinks{
+    position: absolute;
+    top: 45%;
+    left: 4%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem
+}
+.main .socialLinks a >i{
+    font-size: 2rem;
+    color: #EEEEEE;
+    transition: .5s linear;
+}
+.main .socialLinks a >i:hover{
+    transform: translateY(-3px);
+}
+
+
+
+.main .home{
+    min-height: 1000px;
+    max-height: 1400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+.main .home::after{
+    content: "";
+    background: url("../assets/cloud.png");
+    width: 100%;
+    height: 8rem;
+    position: absolute;
+    top: 88.5%;
+    left: 0;
+    border-top: 1px solid #00ADB5;
+    border-radius: 40%;
+}
+
+
+
+
+/* header */
+.main .home header{
+    position: relative;
+    height: 170px;
+    width: 100%;
+}
+.main .home header #bars{
+    font-size: 3rem;
+    position: fixed;
+    top: 2rem;
+    right: 2%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    z-index: 1000000;
+    transition: .2s;
+}
+
+/* links container */
+.main .home header .linksCon{
+ /* layout for non-absolute */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+.main .home header .linksCon >.left{
+    margin-left: -7rem;
+}
+.main .home header a .logo{
+    width: 100%;
+    height: 100%;
+    max-height: 120px;
+    max-width: 120px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #EEEEEE;
+    padding: .3rem;
+    border-radius:50%;
+}
+/* header links */
+/* left */
+.main .home header .linksCon .left a{
+    color: #EEEEEE;
+    font-size: 30px;
+    text-decoration: none;
+    margin-right: 2rem;
+    position: relative;
+    font-family: var(--sans);
+    z-index: 10000;
+}
+.main .home header .linksCon .left a:nth-child(1){
+margin-left: -2rem;
+}
+/* left a hover effect */
+.main .home header .linksCon .left a::before{
+    content: "";
+    background: #00ADB5;
+    height: 10%;
+    width: 0%;
+    position: absolute;
+    bottom: -3%;
+    right: 0;
+    transition: 1s;
+    z-index: 2;
+}
+.main .home header .linksCon .left a:hover::before{
+    width: 100%;
+    opacity: .40;
+}
+
+
+
+
+/* right */
+.main .home header .linksCon .right{
+    margin-right: -8rem;
+}
+.main .home header .linksCon .right a{
+    color: #EEEEEE;
+    font-size: 30px;
+    text-decoration: none;
+    margin-right: 2rem;
+    transition: 1s;
+    position: relative;
+    font-family: var(--sans);
+}
+/* hover effect for right */
+.main .home header .linksCon .right a::before{
+    content: "";
+    background: #EEEEEE;
+    height: 10%;
+    width: 0%;
+    position: absolute;
+    bottom: -3%;
+    left: 0;
+    transition: 1s;
+    z-index: 2;
+}
+.main .home header .linksCon .right a:hover::before{
+    width: 100%;
+    opacity: .40;
+}
+.homeTextCon{
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* subTextCon */
+.homeTextCon .subTextCon{
+    position: relative;
+    color: #EEEEEE;
+}
+/* I AM */
+.homeTextCon .subTextCon .iAm{
+    position: absolute;
+    top: -2%;
+    left: 19.2rem;
+    transform: rotate(-30deg);
+    font-family: var(--sans);
+    font-size: 40px;
+}
+
+.homeTextCon .subTextCon .jonrieText{
+    font-size: 179px;
+    font-family: var(--wideLatin);
+    display: inline-block;
+    transform: scale(.5, 1.3);
+    position: relative;
+    color: #00ADB5;
+}
+
+.homeTextCon .subTextCon .aWebDeveloper{
+    position: absolute;
+    bottom: 0rem;
+    right: 10rem;
+    bottom: -2rem;
+    transform: rotate(-15deg);
+    font-family: var(--sans);
+    font-size: 40px;
+}
+
+
+
+
+
+
+/* media query */
+@media screen and (max-width: 1050px){
+
+    /* logo decrease size */
+    .main .home header a .logo{
+        width: 100%;
+        height: 100%;
+        max-height: 70px;
+        max-width: 70px;
+        left: .3rem;
+    }
+
+    /* A WEB DEVELOPER */
+    .homeTextCon .subTextCon .aWebDeveloper{
+        right: 50%;
+        transform: rotate(0deg);
+        bottom: -5rem;
+        transform: translateX(50%);
+        word-break: break-word;
+        text-align: center;
+        font-size: 25px;
+    }
+
+}
+
+/* show bars */
+@media screen and (max-width: 875px){
+
+    /* display none the up because the bars is shown */
+    .main .up{
+        display: none;
+    }
+
+    /* show bars */
+    .main .home header #bars{
+        display: block;
+    }
+
+
+    /* links new layout */
+    .main .home header .linksCon{
+        /* reset */
+        padding-top: 0;
+
+        /* layout for non-absolute */
+        flex-direction: column;
+        background: #00ADB5;
+        z-index: 10000;
+        height: 100vh;
+        min-height: 700px;
+        width: 100%;
+        position: fixed;
+        left: 200%;
+        top: 0;
+        transition: .3s;
+        opacity: 0;
+       }
+       .main .home header .linksCon  .left a,
+       .main .home header .linksCon  .right a{
+        font-size: 2rem;
+        color: #fff;
+        margin-bottom: 1rem;
+        text-align: center;
+
+        /* reset */
+        margin-right: 0;
+       }
+
+
+       /* reset home */
+        .main .home{
+    background-attachment: unset;
+    }
+
+
+        /* reset */
+    .main .home header .linksCon >.left{
+        margin-left: 0;
+    }
+
+       .main .home header .linksCon  .left,
+       .main .home header .linksCon  .right{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+       }
+
+       /* reset */
+       .main .home header .linksCon  .left a:nth-child(1){
+        margin: 0;
+       }
+
+       /* reset */
+       .main .home header .linksCon .right{
+        margin-right: 0rem;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 750px){
+    
+     .homeTextCon .subTextCon .jonrieText{
+    font-size: 120px;
+} 
+
+    /* I AM and A WEB DEVELOPER new position */
+
+
+    .homeTextCon .subTextCon .iAm{
+        top: -4rem;
+        left: 25%;
+        transform: rotate(0deg);
+        font-size: 25px;
+    }
+
+}
+
+
+@media screen and (max-width: 500px){
+
+        .homeTextCon .subTextCon .jonrieText{
+            font-size: 25vw;
+        }
+
+}
+
+@media screen and (max-width: 380px){
+    .homeTextCon .subTextCon .aWebDeveloper{
+        bottom: -8rem;
+        top: 8rem;
+        z-index: 100000000;
+    }
+}
+
+@media screen and (max-width: 260px){
+    .homeTextCon .subTextCon .aWebDeveloper{
+        bottom: -11rem;
+    }
+}
